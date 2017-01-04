@@ -1,9 +1,19 @@
 <h2 id="title">Ember-Engines Demo</h2>
+<ul>
+  <li>{{#link-to "blog"}}Blog{{/link-to}}</li>
+  <li>{{#link-to "chat"}}Chat{{/link-to}}</li>
+</ul>
 
-{{#link-to "blog"}}Blog{{/link-to}}
+<h5>Outside engine case</h5>
+{{#link-to "user" 1 (query-params active=true)}}User 1{{/link-to}}
+
+<h5>Inside engine case</h5>
+{{#link-to "chat.viewer" 1 (query-params active=false)}}Viewer 1{{/link-to}}
+
+<hr />
 
 {{outlet}}
 
 <hr />
 
-{{mount "ember-chat-engine"}}
+{{!-- {{mount "ember-chat-engine"}} --}}
